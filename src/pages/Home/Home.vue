@@ -8,13 +8,31 @@
       <mt-button class="mint-button mint-button--danger is-plain">登录</mt-button>
     </div>
     <div class="swiperBar">
-      
+        <div class="wrapper" ref="wrapper">
+          <ul class="content">
+            <li>首页</li>
+            <li>网易严选</li>
+            <li>网易严选</li>
+            <li>网易严选</li>
+            <li>网易严选</li>
+            <li>网易严选</li>
+            <li>网易严选</li>
+            <li>网易严选</li>
+          </ul>
+        </div>
+        <span class="xia icon-arrow-down"> </span>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll'
   export default {
+     mounted() {
+       new BScroll('.wrapper',{
+         scrollX:true
+       })
+    }
   }
 </script>
 
@@ -47,7 +65,24 @@
       border-radius 10px
       width 74px
       height 40px
+  .swiperBar
+    .wrapper
+      width 100%
+      height 60px
+      overflow hidden
+      .content
+        margin 0
+        padding-left 30px
+        display flex
+        list-style none 
+        width 2000px
+        font-size 28px
+        li
+          width 100xp
+          height 60px
+          line-height 60px
+          padding 0 20px
+    .xia
+      position relative
 
-    
- 
 </style>
