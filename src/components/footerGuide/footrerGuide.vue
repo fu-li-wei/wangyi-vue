@@ -37,6 +37,7 @@
 
 <style lang="stylus">
 #footerContainer
+  background-color #fff
   display flex
   border-top 1px solid #eee
   position fixed
