@@ -42,8 +42,8 @@
   border-top 1px solid #eee
   position fixed
   left 0
-  bottom 0
-  width 100%
+  bottom -1px
+  width 100% + 1px
   height 100px
   box-sizing border-box
   .botItem

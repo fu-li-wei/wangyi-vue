@@ -1,6 +1,16 @@
 <template>
-  <div>
-      <h1>分类</h1>
+  <div id="classifyContent">
+    <div class="search">
+      <input type="text">
+    </div>
+    <div class="listContent">
+      <div class="list-left">
+
+      </div>
+      <div class="list-right">
+        
+      </div>
+    </div>
   </div>
 </template>
 
