@@ -58,15 +58,15 @@
     </div>
     <div class="smallBar">
       <div class="icoo">
-        <i style="background-image: url('../../common/images/易.png')"></i>
+        <i style="background-image: url('https://yanxuan.nosdn.127.net/a03dd909803b9ac032eba58b7253a2f6.png"></i>
         <span>网易自营品牌</span>
       </div>
        <div class="icoo">
-         <i style="background-image: url('../../common/images/安全.png')"></i>
+         <i style="background-image: url(https://yanxuan.nosdn.127.net/2d0402ffcd52b3ec3b07422681c42a89.png)"></i>
         <span>30天无忧退货</span>
       </div>
        <div class="icoo">
-         <i style="background-image: url('../../common/images/钱.png')"></i>
+         <i style="background-image: url(https://yanxuan.nosdn.127.net/eb61ee48e8942dbd1784c9ee75ebe955.png)"></i>
         <span>48小时快速退款</span>
       </div>
     </div>
@@ -222,7 +222,7 @@
         <span> 更多 <b>></b></span>
       </div>
       <div class="gou-b">
-        <a href="##" style="margin-left:-55px">
+        <a href="##">
           <div>
             <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
           </div>
@@ -390,10 +390,16 @@
     justify-content space-around
     line-height 72px
     border-bottom 1px solid #eee
+    background-color #fff
     .icoo
       i 
-        width 30px
-        height 30px
+        display inline-block
+        width 40px
+        height 45px
+        background-size 40px 40px
+        background-repeat no-repeat
+        // line-height 40px
+        vertical-align: middle
         span
           padding-left 35px
           background-size 50px 50px
@@ -403,6 +409,8 @@
     width 100%
     height 372px
     border-bottom 1px solid #eee
+    background-color #fff
+    padding 20px 0 20px 0
     ul
       list-style none 
       padding 0
