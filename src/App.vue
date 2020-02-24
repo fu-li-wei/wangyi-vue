@@ -11,6 +11,7 @@ import FooterGuide from './components/footerGuide/footrerGuide'
 export default {
   name:'app',
   components:{FooterGuide}
+ 
 }
 </script>
 

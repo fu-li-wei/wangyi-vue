@@ -6,14 +6,15 @@
         <a href="">
           <img src="../../common/images/wangyiyanxauan.png" alt="">
         </a>
-        <input type="text" placeholder='提示信息!!'>
+        <input type="text" placeholder='提示信息!!' @click="goToSearch">
         <mt-button class="mint-button mint-button--danger is-plain">登录</mt-button>
       </div>
       <div class="swiperBar">
           <div class="wrapper" ref="wrapper">
             <ul class="content">
               <li class="hoverLi" @click="updataLI">首页</li>
-              <li v-for="(item, index) in datas[0].subCateList" :key="index" @click="{updataLI}">{{item.name}}</li>
+              <!-- <li v-for="(item, index) in datas[0].subCateList" :key="index" @click="{updataLI}">{{item.name}}</li> -->
+              <li v-for="(item, index) in indexCateModule" :key="index">{{item.name}}</li>
               <!-- <li>网易严选</li>
               <li>网易严选</li>
               <li>网易严选</li>
@@ -26,32 +27,8 @@
     </div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/032617a78bd1eb5a7e056e016fec1f24.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/a18ab9d5f61b74b67732a928e8a5ad0f.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/8c5af34810092b0cfe59d1020b28bcfe.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/032617a78bd1eb5a7e056e016fec1f24.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/a18ab9d5f61b74b67732a928e8a5ad0f.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/8c5af34810092b0cfe59d1020b28bcfe.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/032617a78bd1eb5a7e056e016fec1f24.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/a18ab9d5f61b74b67732a928e8a5ad0f.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://yanxuan.nosdn.127.net/8c5af34810092b0cfe59d1020b28bcfe.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
+        <div class="swiper-slide" v-for="(item, index) in indexCateModule" :key="index">
+            <img :src="item.imgUrl" alt="">
         </div>
       </div>
       <div class="swiper-scrollbar"></div>
@@ -72,45 +49,9 @@
     </div>
     <div class="spList">
       <ul>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
-        </li>
-        <li>
-          <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-          <span>新品首发</span>
+        <li v-for="(item, index) in indexData.kingKongModule.kingKongList" :key="index">
+          <img :src="item.picUrl" class="img">
+          <span>{{item.text}}</span>
         </li>
       </ul>
     </div>
@@ -179,37 +120,9 @@
           </a>
         </div>
         <div class="cont-bot">
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
-          </a>
-          <a href="">
-            <span>个人清洁榜</span>
-            <img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png" alt="">
+          <a class="item" v-for="(item, index) in indexData.categoryHotSellModule.categoryList.slice(2,10)" :key="index">
+            <span>{{item.categoryName}}</span>
+            <img :src="item.picUrl" alt="">
           </a>
         </div>
       </div>
@@ -222,41 +135,11 @@
         <span> 更多 <b>></b></span>
       </div>
       <div class="gou-b">
-        <a href="##">
-          <div>
-            <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
-          </div>
-          <span>￥59.9<s>￥79.9</s></span>
-        </a>
-        <a href="##">
-          <div>
-            <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
-          </div>
-          <span>￥59.9<s>￥79.9</s></span>
-        </a>
-        <a href="##">
-          <div>
-            <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
-          </div>
-          <span>￥59.9<s>￥79.9</s></span>
-        </a>
-        <a href="##">
-          <div>
-            <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
-          </div>
-          <span>￥59.9<s>￥79.9</s></span>
-        </a>
-        <a href="##">
-          <div>
-            <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
-          </div>
-          <span>￥59.9<s>￥79.9</s></span>
-        </a>
-        <a href="##">
-          <div>
-            <img src="https://yanxuan-item.nosdn.127.net/5328548b08399e3347cc1d9679d9943f.png" alt="">
-          </div>
-          <span>￥59.9<s>￥79.9</s></span>
+        <a class="item" v-for="(item, index) in indexData.flashSaleModule.itemList" :key="index">
+            <div>
+                <img :src="item.picUrl" alt="">
+            </div>
+            <span class="new">￥{{item.activityPrice}}<s>￥{{item.originPrice}}</s></span>
         </a>
       </div>
     </div>
@@ -276,12 +159,19 @@
   import BScroll from 'better-scroll'
   import 'swiper/css/swiper.css'
   import  Swiper from 'swiper'
-  import navigation from '../../common/data/indexCateModule.json'
+  import indexCateModule from '../../common/data/indexCateModule.json'
+  import indexData from '../../common/data/index.json'
   export default {
     data(){
       return{
-        datas:navigation,
-        showLi:true
+        // datas:navigation,
+        // showLi:true
+      }
+    },
+    data(){
+      return{
+        indexCateModule,
+        indexData
       }
     },
     mounted() {
@@ -300,6 +190,9 @@
     methods:{
       updataLI(){
         this.showLi = !this.showLi
+      },
+      goToSearch(){
+        this.$router.push('/search')
       }
     }
   }
@@ -355,7 +248,7 @@
           padding 0px
           display flex
           list-style none 
-          width 5000px 
+          width 1376px
           font-size 28px
           li
             width 100xp

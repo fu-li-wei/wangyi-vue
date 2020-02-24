@@ -6,14 +6,27 @@ const postcss = px2rem({
 })
 
 module.exports = {
-    runtimeCompiler: true,
-    css: { // 添加postcss配置
-    loaderOptions: {
+  lintOnSave: false,
+  runtimeCompiler: true,
+  css: { // 添加postcss配置
+  loaderOptions: {
       postcss: {
         plugins: [
           postcss
         ]
       }
     }
-}
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://m.you.163.com',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
 }

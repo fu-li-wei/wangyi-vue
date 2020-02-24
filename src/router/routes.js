@@ -3,6 +3,8 @@ import Buy from '../pages/Buy/Buy.vue'
 import Car from '../pages/Car/Car.vue'
 import Classify from '../pages/Classify/Classify.vue'
 import My from '../pages/My/My.vue'
+import Search from '../pages/Search/Search.vue'
+import Login from '../pages/EmailLogin/EmailLogin.vue'
 
 export default [
     {
@@ -24,6 +26,17 @@ export default [
     {
         path: '/my',
         component:My
+    },
+    {
+        path: '/login',
+        component:Login
+    },
+    {
+        path:'/search',
+        component:Search,
+        meta:{
+            showFooter:false
+        }
     },
     {
         path: '/',
